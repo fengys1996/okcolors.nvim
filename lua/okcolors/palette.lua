@@ -30,4 +30,19 @@ else
     palette = colorscheme.dark
 end
 
+local function tint_background(accent, amount)
+    local channels = {}
+    for i = 2, 6, 2 do
+        local bg = tonumber(palette.bg:sub(i, i + 1), 16)
+        local fg = tonumber(accent:sub(i, i + 1), 16)
+        channels[#channels + 1] = math.floor(bg + (fg - bg) * amount + 0.5)
+    end
+    return string.format("#%02x%02x%02x", channels[1], channels[2], channels[3])
+end
+
+palette.diff_add = tint_background(palette.green, 0.2)
+palette.diff_delete = tint_background(palette.red, 0.2)
+palette.diff_change = tint_background(palette.blue, 0.2)
+palette.diff_text = tint_background(palette.blue, 0.6)
+
 return palette
