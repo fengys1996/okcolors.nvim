@@ -262,6 +262,11 @@ function M.get_highlight_groups()
             SpellLocal = { sp = palette.green, undercurl = true },
             SpellRare  = { sp = palette.cyan, undercurl = true },
         },
+        illuminate = {
+            IlluminatedWordText  = { bg = palette.hilite_lo },
+            IlluminatedWordRead  = { link = "IlluminatedWordText" },
+            IlluminatedWordWrite = { link = "IlluminatedWordText" },
+        },
         telescope = {
             TelescopeBorder       = { link = "FloatBorder" },
             TelescopeTitle        = { link = "FloatTitle" },
