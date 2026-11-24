@@ -26,8 +26,14 @@ end
 local palette
 if vim.o.background == "light" then
     palette = colorscheme.light
+    palette.search_fg = "#302710"
+    palette.search_bg = "#ffe6a3"
+    palette.cur_search_bg = "#ffc45c"
 else
     palette = colorscheme.dark
+    palette.search_fg = palette.tx
+    palette.search_bg = "#4d4024"
+    palette.cur_search_bg = "#755321"
 end
 
 local function tint_background(accent, amount)
